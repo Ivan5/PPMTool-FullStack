@@ -5,17 +5,21 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddProject from "./components/Project/AddProject";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Dashboard />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/addProject" component={AddProject} />
-      </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Header />
+          <Dashboard />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/addProject" component={AddProject} />
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

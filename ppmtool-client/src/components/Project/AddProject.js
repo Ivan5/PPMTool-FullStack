@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { tsConstructorType } from "@babel/types";
 
 class AddProject extends Component {
   constructor() {
